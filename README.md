@@ -57,6 +57,5 @@ Python 3 — linguagem base do projeto
 
 Pandas e NumPy — manipulação de dados e cálculos numéricos
 
-PaddlePaddle — framework chinês de aprendizado de máquina (importado para futuras expansões do modelo)
-
 Scikit-Learn — para pré-processamento e padronização de dados
+
