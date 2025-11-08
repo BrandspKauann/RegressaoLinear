@@ -1,5 +1,5 @@
 # 🏙️ Estimativa de Preço de Imóveis com Regressão Linear
-Utilizando PaddlePaddle (China) e conceitos básicos de Machine Learning
+
 # 📘 Visão Geral
 
 Este projeto demonstra, de forma prática e objetiva, como aplicar regressão linear para estimar o preço de imóveis em diferentes bairros de São Paulo.
@@ -58,4 +58,5 @@ Python 3 — linguagem base do projeto
 Pandas e NumPy — manipulação de dados e cálculos numéricos
 
 Scikit-Learn — para pré-processamento e padronização de dados
+
 
