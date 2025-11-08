@@ -1,46 +1,62 @@
-# Previsão de Preço de Imóveis com Regressão Linear
+# 🏙️ Estimativa de Preço de Imóveis com Regressão Linear
+Utilizando PaddlePaddle (China) e conceitos básicos de Machine Learning
+# 📘 Visão Geral
 
-Este projeto apresenta uma maneira simples e direta de estimar o preço de imóveis em diferentes bairros da cidade de São Paulo. A ideia central é mostrar como a regressão linear — um dos conceitos mais fundamentais da estatística — pode ser aplicada para aproximar valores de mercado de forma prática e compreensível.
+Este projeto demonstra, de forma prática e objetiva, como aplicar regressão linear para estimar o preço de imóveis em diferentes bairros de São Paulo.
+A ideia central é aproximar o valor de mercado de um imóvel a partir do preço médio do metro quadrado em cada região — tudo implementado de maneira clara e acessível.
 
-# O que o projeto faz
+Embora simples, o projeto ilustra como a base da inteligência artificial pode ser usada para criar modelos preditivos úteis, mesmo sem grandes volumes de dados.
 
-A aplicação permite ao usuário informar dois dados básicos: o bairro e a metragem do imóvel.
-Com essas informações, o sistema calcula automaticamente o preço estimado, considerando o valor médio do metro quadrado para aquele bairro.
+# 🧠 Objetivo
 
-O objetivo é ilustrar como pequenas relações matemáticas podem gerar estimativas úteis, reforçando o entendimento sobre como modelos preditivos funcionam na prática.
+Criar um sistema que:
 
-# Por que este projeto é importante
+Receba como entrada o bairro e a metragem (m²) de um imóvel;
 
-O projeto foi pensado como um ponto de partida para quem deseja compreender o funcionamento da regressão linear sem precisar lidar com grandes volumes de dados ou bibliotecas complexas de aprendizado de máquina.
-Ele mostra que é possível obter resultados rápidos e intuitivos apenas com lógica, organização e uma boa estrutura de cálculo.
+Calcule automaticamente o preço estimado com base no valor médio do metro quadrado daquele bairro;
 
-# Como ele funciona
+Realize uma validação automática para verificar se o cálculo está dentro da margem aceitável do preço estimado.
 
-A base do modelo é uma relação simples: quanto maior a metragem do imóvel e maior o valor médio do metro quadrado do bairro, maior será o preço estimado.
-Essa relação linear é usada para gerar previsões imediatas, oferecendo ao usuário uma noção aproximada de quanto um imóvel pode custar em determinada região.
+# 🏗️ Estrutura do Projeto
 
-# Limitações do modelo
+O código é dividido em três partes principais:
 
-Por ser uma versão simplificada, o projeto não considera fatores como localização exata, idade do imóvel, número de quartos ou variações de mercado.
-O foco está na clareza do raciocínio e na facilidade de compreensão, e não na precisão absoluta dos valores.
+1. Base de Dados Simplificada
 
-Mesmo com essa limitação, o modelo cumpre bem o papel de demonstrar como a regressão linear pode ser aplicada e serve como base para versões mais completas no futuro.
+Uma pequena base foi criada manualmente com 10 bairros de São Paulo e seus respectivos valores médios de m².
+Essa base serve como referência para o modelo fazer previsões sem depender de bancos de dados externos.
 
-# Próximos passos e melhorias
+2. Função de Cálculo do Preço
 
-A partir dessa base, o projeto pode evoluir com novas funcionalidades, como:
+A função principal recebe o bairro e a metragem do imóvel, consulta o valor médio do m² e retorna o preço estimado.
+Caso o bairro não exista na base, o sistema retorna uma mensagem informando que ele não foi encontrado.
 
-Inclusão de variáveis adicionais (quartos, localização, idade do imóvel, entre outras);
+3. Função de Validação
 
-Integração com bancos de dados reais e atualizados;
+Após calcular o preço, o sistema realiza uma checagem simples comparando o valor calculado com uma estimativa fornecida.
+Se a diferença estiver dentro de 1%, o cálculo é considerado válido; caso contrário, o sistema alerta que há uma divergência.
 
-Criação de uma interface visual mais amigável;
+# 💬 Exemplo de Funcionamento
 
-Implementação de um modelo de regressão linear treinado com dados históricos para gerar previsões mais precisas.
+O usuário informa:
 
-Conclusão
+Bairro: Vila Nova Conceição
 
-A Previsão de Preço de Imóveis com Regressão Linear é um projeto educativo que une simplicidade e utilidade.
-Ele mostra, de forma intuitiva, como a estatística pode ajudar a entender o comportamento do mercado imobiliário e como conceitos matemáticos simples podem gerar resultados concretos.
+Metragem: 120 m²
 
-Mais do que um cálculo automático, este projeto representa um primeiro passo em direção à análise de dados aplicada de forma inteligente, acessível e prática.
+O sistema localiza o valor médio do metro quadrado para o bairro informado.
+
+Calcula automaticamente o preço estimado:
+R$ 2.460.000,00
+
+Em seguida, realiza a validação e retorna uma mensagem confirmando a precisão do cálculo.
+
+# 🧩 Tecnologias Utilizadas
+
+Python 3 — linguagem base do projeto
+
+Pandas e NumPy — manipulação de dados e cálculos numéricos
+
+PaddlePaddle — framework chinês de aprendizado de máquina (importado para futuras expansões do modelo)
+
+Scikit-Learn — para pré-processamento e padronização de dados
